@@ -1,0 +1,33 @@
+<div role="main">
+    <header class="page-header">
+        <h1>Latest Products</h1>
+    </header>
+
+    <div class="row">
+        <div class="column">
+            <div class="row results-list block-view vertical-grid product-listing">
+                <ul id="pgrid" class="large-block-grid-4" style="height: 2429px;">
+                    <li ng-repeat="product in products" class="productSnippet" style="width: 230px;  float: left" id="product-snippet-">
+                        <article class="box" style="padding-bottom: 0px;">
+                            <a href="/#/products/{{product._id}}">
+                                <figure style="text-align:center;">
+                                    <img style="max-height: 160px; max-width: 100%; width: auto; height: auto;" src="{{product.image_url}}" alt="">
+                                </figure>
+                                <h4 style="max-height:90px;overflow: hidden;">{{product.description}}</h4>
+                            </a>
+                            <footer>
+                                <div class="price-box cf">
+                                    <div class="price">{{product.price}}</div>
+                                    <div class="buy">
+                                        <a class="button tiny radius tertiary" data-source="{{product.source}}" data-productid="5260fa3c971c41fc53000032" data-price="{{product.price}}" data-description="{{product.description}}" data-image="{{product.image_url}}" href="{{product.source}}">See It</a>
+                                    </div>
+                                </div>
+
+                             </footer>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

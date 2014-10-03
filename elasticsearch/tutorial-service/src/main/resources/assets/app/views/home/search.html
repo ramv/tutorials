@@ -1,0 +1,84 @@
+<div role="main">
+    <header class="page-header">
+        <h1>Latest Products</h1>
+
+        <ul class="sorting-menu">
+            <li id="products" class="{{searchMenu.products}}">
+                <a ng-click="showResults('products')">Products</a>
+            </li>
+            <li id="users" class="{{searchMenu.users}}">
+                <a ng-click="showResults('collections')">Users</a>
+            </li>
+            <li id="coupons" class="{{searchMenu.coupons}}">
+                <a href="showResults('users')">Coupons</a>
+            </li>
+            <li id="collections" class="{{searchMenu.collections}}">
+                <a href="showResults('coupons')">Collections</a>
+            </li>
+        </ul>
+    </header>
+
+    <div id="productSearchResults" class="row">
+        <div class="column">
+            <div class="row results-list block-view vertical-grid product-listing">
+                <ul id="pgrid" class="large-block-grid-4" style="height: 2429px;">
+                    <li ng-repeat="product in products" class="productSnippet" style="width: 230px;  float: left" id="product-snippet-">
+                        <article class="box" style="padding-bottom: 0px;">
+                            <a href="/products/{{product._id}}">
+                                <figure style="text-align:center;">
+                                    <img style="max-height: 160px; max-width: 100%; width: auto; height: auto;" src="{{product.image_url}}" alt="">
+                                </figure>
+                                <h4 style="max-height:90px;overflow: hidden;">{{product.description}}</h4>
+                            </a>
+                            <footer>
+                                <div class="price-box cf">
+                                    <div class="price">{{product.price}}</div>
+                                    <div class="buy">
+                                        <a class="button tiny radius tertiary" data-source="{{product.source}}" data-productid="5260fa3c971c41fc53000032" data-price="{{product.price}}" data-description="{{product.description}}" data-image="{{product.image_url}}" href="{{product.source}}">See It</a>
+                                    </div>
+                                </div>
+
+                            </footer>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="userSearchResults" class="row">
+        <div class="column">
+            <div class="row results-list block-view vertical-grid product-listing">
+                <ul id="pgrid" class="large-block-grid-4" style="height: 2429px;">
+                    <li ng-repeat="user in users" class="productSnippet" style="width: 230px;  float: left" id="product-snippet-">
+                        <article class="box" style="padding-bottom: 0px;">
+                            <a href="/#/user/{{user._id}}">
+                                <figure style="text-align:center;">
+                                    <img style="max-height: 160px; max-width: 100%; width: auto; height: auto;" src="{{user.pics[0]}}" alt="">
+                                </figure>
+                                <h4 style="max-height:90px;overflow: hidden;">{{user.firstname}} {{user.lastname}}</h4>
+                            </a>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="collectionSearchResults" class="row">
+        <div class="column">
+            <div class="row results-list block-view vertical-grid product-listing">
+                <ul id="pgrid" class="large-block-grid-4" style="height: 2429px;">
+                    <li ng-repeat="collection in collections" class="productSnippet" style="width: 230px;  float: left" id="product-snippet-">
+                        <article class="box" style="padding-bottom: 0px;">
+                            <a href="/#/collections/{{collection._id}}">
+                                <figure style="text-align:center;">
+                                    <img style="max-height: 160px; max-width: 100%; width: auto; height: auto;" src="{{collection.image}}" alt="">
+                                </figure>
+                                <h4 style="max-height:90px;overflow: hidden;">{{collection.name}}}</h4>
+                            </a>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

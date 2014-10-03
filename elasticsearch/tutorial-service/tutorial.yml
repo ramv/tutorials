@@ -1,0 +1,86 @@
+sampleProperty: hello!
+
+# Database settings.
+database:
+  driverClass: org.apache.derby.jdbc.EmbeddedDriver
+  url: jdbc:derby:/tmp/mydb;create=true
+  user: admin
+  password: admin
+  minSize: 8
+  maxSize: 200
+  validationQuery: values 1
+  properties:
+    hibernate.temp.use_jdbc_metadata_defaults: false
+    hibernate.dialect: org.hibernate.dialect.DerbyTenSevenDialect
+    hibernate.hbm2ddl.auto: update
+    hibernate.format_sql: true
+
+  #driverClass: org.postgresql.Driver
+  #url: jdbc:postgresql://localhost:5432/mydb?prepareThreshold=0
+  #user: admin
+  #password: admin
+  #minSize: 8
+  #maxSize: 200
+  #validationQuery: select version()
+  #properties:
+  #  hibernate.temp.use_jdbc_metadata_defaults: false
+  #  hibernate.dialect: org.hibernate.dialect.PostgreSQL82Dialect
+  #  hibernate.hbm2ddl.auto: update
+  #  hibernate.format_sql: true
+
+server:
+#  softNofileLimit: 1000
+#  hardNofileLimit: 1000
+  applicationConnectors:
+    - type: http
+      port: 8080
+#    - type: https
+#      port: 8443
+#      keyStorePath: example.keystore
+#      keyStorePassword: example
+#      validateCerts: false
+# this requires the npn-boot library on the JVM's boot classpath
+#    - type: spdy3
+#      port: 8445
+#      keyStorePath: example.keystore
+#      keyStorePassword: example
+#      validateCerts: false
+  adminConnectors:
+    - type: http
+      port: 8081
+#    - type: https
+#      port: 8444
+#      keyStorePath: example.keystore
+#      keyStorePassword: example
+#      validateCerts: false
+  requestLog:
+    appenders:
+      - type: console
+
+# Logging settings.
+logging:
+
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: INFO
+
+  # Logger-specific levels.
+  loggers:
+    com.example: INFO
+    org.hibernate.SQL: ALL
+
+  appenders:
+    - type: console
+    - type: file
+      # The file to which current statements will be logged.
+      currentLogFilename: /var/log/tutorial/tutorial.log
+
+      # When the log file rotates, the archived log will be renamed to this and gzipped. The
+      # %d is replaced with the previous day (yyyy-MM-dd). Custom rolling windows can be created
+      # by passing a SimpleDateFormat-compatible format as an argument: "%d{yyyy-MM-dd-hh}".
+      archivedLogFilenamePattern: /var/log/tutorial/tutorial-%d.log
+
+      # The number of archived files to keep.
+      archivedFileCount: 5
+
+      # The timezone used to format dates. HINT: USE THE DEFAULT, UTC.
+      timeZone: UTC
