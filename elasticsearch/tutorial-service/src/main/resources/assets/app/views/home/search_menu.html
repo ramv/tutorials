@@ -1,0 +1,37 @@
+ <div>
+   <div class="searchHeadings">Products</div>
+   <ul>
+        <li ng-repeat="product in products" style="border-bottom:none;padding-top:4px; padding-bottom:4px;">
+            <div class="searchImageContainer left" style="margin-right: 10px; width: 40px; text-align: center;">
+                <img style="max-height: 40px;max-width: 40px;" src="{{product.image_url}}">
+            </div>
+            <a href="/#/products/{{product._id}}">{{product.description}}</a>
+            <div class="clearfix"></div>
+        </li>
+    </ul>
+</div>
+<div>
+   <div class="searchHeadings">Collections</div>
+   <ul>
+        <li ng-repeat="collection in collections" style="border-bottom:none;padding-top:4px; padding-bottom:4px;">
+            <div class="searchImageContainer left" style="margin-right: 10px; width: 40px; text-align: center;">
+                <img style="max-height: 40px;max-width: 40px;" src="{{collection.latest_pics[0]}}">
+            </div>
+            <a href="/#/collection/{{collection._id}}">{{collection.name}}</a>
+            <div class="clearfix"></div>
+        </li>
+    </ul>
+</div>
+<div>
+   <div class="searchHeadings">Users</div>
+   <ul>
+        <li ng-repeat="user in users" style="border-bottom:none;padding-top:4px; padding-bottom:4px;">
+            <div class="searchImageContainer left" style="margin-right: 10px; width: 40px; text-align: center;">
+                <img style="max-height: 40px;max-width: 40px;" src="{{user.pics[0]}}">
+            </div>
+            <a href="/#/users/{{user._id}}">{{user.firstname}} {{user.lastname}}</a>
+            <div class="clearfix"></div>
+        </li>
+    </ul>
+</div>
+
