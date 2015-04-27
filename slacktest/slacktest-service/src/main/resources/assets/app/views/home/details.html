@@ -1,0 +1,39 @@
+<div role="main" class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <div ng-show="submitSuccess">
+                <div class="alert alert-block alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <h4>Success!</h4>
+                    {{submit.success}}
+                </div>
+            </div>
+            <div ng-show="submitFailure">
+                <div class="alert alert-block alert-error">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <h4>Error!</h4>
+                    {{submit.error}}
+                </div>
+            </div>
+            <div id="htmldetails">
+                <table class="table">
+                    <tr>
+                        <th>Tag Name</th>
+                        <th>Count</th>
+                    </tr>
+                    <tr ng-repeat="tag in tags">
+                        <td><div ng-click="highlightTags(this)" class="btn btn-primary btn-lg active">{{tag.name}}</div></td>
+                        <td>{{tag.count}}</td>
+                    </tr>
+                </table>
+                <div style="display:block;background-color: #777777; visibility: hidden" id="source_div">
+                    <pre prism>
+                        <code class="language-markup" id="html_source" >
+                            {{html}}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>

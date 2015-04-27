@@ -1,0 +1,16 @@
+<div class="container-fluid" id="homeContent">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Welcome to Slacktest!</h1>
+            <p class="lead">This is an app for fetching the source of the HTML, and displaying in a code block</p>
+            <div class="form-group has-success" ng-controller="DetailsCtrl">
+                <form ng-submit="submit()">
+                    <label class="control-label" for="url">Please enter a URL to fetch</label>
+                    <input type="text" class="form-control" id="url" ng-model="url" required placeholder="e.g.: http://www.goolge.com"/>
+                    <br/>
+                    <input class="btn btn-primary" type="submit" value="Fetch Details"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
