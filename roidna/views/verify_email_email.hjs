@@ -1,0 +1,11 @@
+<html>
+<head>
+  <title>Please verify email</title>
+</head>
+<body>
+  Thank you for registering.
+  <span> Please veify your <a href="{{ url }}">email</a></span>
+  
+  {{ url }}
+</body>
+</html>

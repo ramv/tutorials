@@ -1,0 +1,23 @@
+<div class="container ">
+  <div class="centered span8">
+    <div class="alert alert-warning {{ alert.style }}">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      {{ alert.message }}
+    </div>
+    
+    <h3>Profile Settings</h3>
+    <table class="table table-bordered">
+
+      <tbody>
+        <tr>
+          <td>Username</td>
+          <td>{{ username }}</td>
+        </tr>
+        <tr>
+          <td>Nickname</td>
+          <td>{{ nickname }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

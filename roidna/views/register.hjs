@@ -1,0 +1,35 @@
+
+<div class="centered-block container register">
+
+      <div class="row ">
+          <div class="center span4 well">
+              <div class="alert alert-error {{ alert.style }}">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ alert.message }}
+              </div>
+              <legend>Please Register</legend>
+              <form method="POST" action="" accept-charset="UTF-8">
+              <input type="text" id="name" class="span4" name="nickname" placeholder="Name" />
+              <input type="email" id="username" class="span4" name="username" placeholder="E-Mail" />
+              <input type="password" id="password" class="span4" name="password" placeholder="Password" />
+              <label class="checkbox">
+                  <input type="checkbox" name="remember" value="1" /> Remember Me
+              </label>
+              <button type="submit" name="submit" class="btn btn-success btn-block">Register</button>
+              </form>
+              <div class="col-sm-6 col-sm-offset-3   social-login">
+                  <div class="social-login-buttons">
+                      <a class="btn btn-link-1 btn-link-1-facebook" href="/auth/facebook">
+                          <i class="fa fa-facebook"></i> Facebook
+                      </a>
+                      <a class="btn btn-link-1 btn-link-1-twitter" href="/auth/twitter">
+                          <i class="fa fa-twitter"></i> Twitter
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+    <p class="text-center muted ">&copy; Copyright 2015 - Application Name</p>
+
+</div>

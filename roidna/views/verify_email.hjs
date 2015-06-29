@@ -1,0 +1,9 @@
+
+  <div class="container ">
+  <section class="center span8">
+  <h1>{{ message }}</h1>
+  <div class="alert {{ alert.style }}">
+      {{ alert.message }}
+  </div>
+  </section>
+</div>

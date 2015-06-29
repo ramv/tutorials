@@ -1,0 +1,9 @@
+<div class="container ">
+  <section class="center span8">
+  <h1>{{ message }}</h1>
+  <h2>{{ error.status }}</h2>
+  <pre>{{ error.stack }}</pre>
+  <pre>{{ detail }}</pre>
+  </section>
+</div>
+
